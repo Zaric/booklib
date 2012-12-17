@@ -15,12 +15,12 @@
     <a href="/booklib/book/${book.uuid }?edit=true">修改该书信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/booklib/book">返回书目列表</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
-<div align="center">
+<div align="left">
     书的UUID：${book.uuid }<br>
     书的名称：${book.name }<br>
     书的价格：${book.price }<br>
     书的作者：${book.author }<br>
-    书的简介：${book.content }<br>
+    书的简介：${book.content}<br>
     书的创建时间：${book.createTime }<br>
 </div>
 <h2>书籍的评论</h2>
