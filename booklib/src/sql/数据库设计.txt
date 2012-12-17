@@ -1,0 +1,93 @@
+
+DROP DATABASE IF EXISTS BOOK;
+CREATE DATABASE BOOK DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE BOOK;
+
+user表
++-------------+--------+--------------+------+-----+-------------------+-----------------------------+
+| Field       | Desc   | Type         | Null | Key | Default           | Extra                       |
++-------------+--------+--------------+------+-----+-------------------+-----------------------------+
+| id          | 主健         | bigint(20)   | NO   | PRI | NULL              | auto_increment              |
+| login_name  | 登录名    | varchar(255) | NO   |     | NULL              |                             |
+| password    | 密码         | varchar(255) | NO   |     | NULL              |                             |
+| name        | 姓名         | varchar(255) | NO   |     | NULL              |                             |
+| groups       | 用户组    | int(10)      | NO   |     | NULL              | 0为普通用户，1为管理员                   |
+| create_time |创建时间  | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++-------------+--------+--------------+------+-----+-------------------+-----------------------------+
+create table user (
+    id bigint not null primary key auto_increment,
+    uuid char(32) not null,
+    login_name varchar(255) not null, 
+    password varchar(255) not null,
+    name varchar(255) not null, 
+    groups int not null,
+    create_time timestamp not null
+) character set utf8;
+=============================================我是分隔线==================================================
+book表
++-------------+--------+--------------+------+-----+-------------------+-----------------------------+
+| Field       | Desc   | Type         | Null | Key | Default           | Extra                       |
++-------------+--------+--------------+------+-----+-------------------+-----------------------------+
+| id          | 主键        | bigint(20)   | NO   | PRI | NULL              | auto_increment              |
+| name        | 书名        | varchar(255) | NO   |     | NULL              |                             |
+| price       | 价格        | float        | NO   |     | NULL              |                             |
+| author      | 作者        | varchar(255) | NO   |     | NULL              |                             |
+| create_time |创建时间 | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++-------------+--------+--------------+------+-----+-------------------+-----------------------------+
+create table book(
+    id bigint not null primary key auto_increment,
+    uuid char(32) not null,
+    name varchar(255) not null, 
+    price varchar(255) not null, 
+    author varchar(255) not null,
+    create_time timestamp not null
+) character set utf8;
+
+insert into book(name, price, author) values("Delete", "120", "Pang");
+=============================================我是分隔线==================================================
+remark表
++-------------+--------+---------------+------+-----+-------------------+-----------------------------+
+| Field       | Desc   | Type          | Null | Key | Default           | Extra                       |
++-------------+--------+---------------+------+-----+-------------------+-----------------------------+
+| id          | 主键         | bigint(20)    | NO   | PRI | NULL              | auto_increment              |
+| user_name   | 操作者    | varchar(255)  | NO   |     | NULL              |                             |
+| book_id     | 书ID   | bigint(20)    | YES  |     | NULL              |                             |
+| essay       | 内容         | varchar(2000) | NO   |     | NULL              |                             |
+| create_time |创建时间 | timestamp     | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++-------------+--------+---------------+------+-----+-------------------+-----------------------------+
+create table remark(
+    id bigint not null primary key auto_increment,
+    uuid char(32) not null,
+    user_name varchar(255) not null, 
+    book_id  bigint, 
+    essay varchar(2000) not null,
+    create_time timestamp not null
+) character set utf8;
+=============================================我是分隔线==================================================
+log表
++------------------+--------+--------------+------+-----+-------------------+-----------------------------+
+| Field            | Desc   | Type         | Null | Key | Default           | Extra                       |
++------------------+--------+--------------+------+-----+-------------------+-----------------------------+
+| id               | 主健       | bigint(20)   | NO   | PRI | NULL              | auto_increment              |
+| user_name        | 操作者  | varchar(255) | NO   |     | NULL              |                             |
+| resource_pattern |资源模式| varchar(255) | NO   |     | NULL              |                             |
+| resource_id      |资源地址| varchar(255) | NO   |     | NULL              |                             |
+| success          |成功标识| tinyint(1)   | NO   |     | NULL              |                             |
+| remarks          |额外说明| varchar(255) | NO   |     | NULL              |                             |
+| create_time      |创建时间| timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++------------------+--------+--------------+------+-----+-------------------+-----------------------------+
+create table log(
+    id bigint not null primary key auto_increment,
+    uuid char(32) not null,
+    user_name varchar(255) not null, 
+    resource_pattern varchar(255) not null, 
+    resource_id varchar(255) not null, 
+    success tinyint(1)  not null,
+    ip  char(15) not null,
+    remarks varchar(255) not null, 
+    create_time timestamp not null
+) character set utf8;
+
+insert into user(uuid, login_name, password, name, groups) values("9b17a4f1cae442ce9cbab899dcac8517", "admin", "admin", "Administrator", 1);
+
+

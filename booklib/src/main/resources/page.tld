@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+"http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.0</jsp-version>
+	<short-name>p</short-name>
+
+	<!-- 标签库地址，如果这写这个，JSP页面上用逻辑路径指定也可以找到 -->
+	<uri>http://weibo.com/zzuoqiang/page</uri>
+	<description>分页标签库</description>
+	
+	<tag>
+	
+		<!-- 标签名 -->
+		<name>p</name>
+
+		<!-- 实现类 -->
+		<tag-class>com.book.taglib.PagePrint</tag-class>
+
+		<!-- 参数：是否输出页数信息，默认为输出 -->
+		<attribute>
+			<name>totalcount</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+
+		<!-- 参数：是否输出总记录信息，默认为输出 -->
+		<attribute>
+			<name>pagecount</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+
+		<!-- 参数：当前页码的显示样式，如果不指定，将按默认值 -->
+		<attribute>
+			<name>curPageNumberStyle</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>String</type>
+		</attribute>
+
+		<!-- 参数：带链接的页码的显示样式，如果不指定，将按默认值 -->
+		<attribute>
+			<name>linkPageNumberStyle</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>String</type>
+		</attribute>
+
+	</tag>
+</taglib>

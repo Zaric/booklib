@@ -1,0 +1,11 @@
+booklib based on paoding_rose
+
+add more features:
+email ActivateAccountController
+CaptchaController
+pagination
+kindeditor
+fileupload
+...
+and even more in plain.
+This file was modified by IntelliJ IDEA 12.0 for binding GitHub repository
