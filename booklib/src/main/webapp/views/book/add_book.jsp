@@ -31,8 +31,8 @@
     </form>
 </div>
 
-<script charset="utf-8" src="<%=contextPath %>/resources/kindeditor/kindeditor.js"></script>
-<script charset="utf-8" src="<%=contextPath %>/resources/kindeditor/lang/zh_CN.js"></script>
+<script charset="GBK" src="<%=contextPath %>/resources/kindeditor/kindeditor.js"></script>
+<script charset="GBK" src="<%=contextPath %>/resources/kindeditor/lang/zh_CN.js"></script>
 
 <script>
     var editor;
