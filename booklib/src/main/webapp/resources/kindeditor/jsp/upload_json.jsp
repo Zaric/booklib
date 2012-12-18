@@ -14,20 +14,20 @@
      *
      */
 
-//文件保存目录路径
+    //文件保存目录路径
     String savePath = pageContext.getServletContext().getRealPath("/") + "attached/";
 
-//文件保存目录URL
+    //文件保存目录URL
     String saveUrl = request.getContextPath() + "/attached/";
 
-//定义允许上传的文件扩展名
+    //定义允许上传的文件扩展名
     HashMap<String, String> extMap = new HashMap<String, String>();
     extMap.put("image", "gif,jpg,jpeg,png,bmp");
     extMap.put("flash", "swf,flv");
     extMap.put("media", "swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb");
     extMap.put("file", "doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2");
 
-//最大文件大小
+    //最大文件大小
     long maxSize = 1000000;
 
     response.setContentType("text/html; charset=GBK");
@@ -36,13 +36,15 @@
         out.println(getError("请选择文件。"));
         return;
     }
-//检查目录
+
+    //检查目录
     File uploadDir = new File(savePath);
     if (!uploadDir.isDirectory()) {
         out.println(getError("上传目录不存在。"));
         return;
     }
-//检查目录写权限
+
+    //检查目录写权限
     if (!uploadDir.canWrite()) {
         out.println(getError("上传目录没有写权限。"));
         return;
@@ -56,7 +58,8 @@
         out.println(getError("目录名不正确。"));
         return;
     }
-//创建文件夹
+
+    //创建文件夹
     savePath += dirName + "/";
     saveUrl += dirName + "/";
     File saveDirFile = new File(savePath);

@@ -1,18 +1,16 @@
 package com.book.controllers;
 
 import com.book.biz.user.UserBiz;
+import com.book.dao.UserDAO;
+import com.book.model.User;
 import com.book.util.CryptUtils;
+import com.book.util.Utils;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
-
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.book.dao.UserDAO;
-import com.book.model.User;
-import com.book.util.Utils;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;

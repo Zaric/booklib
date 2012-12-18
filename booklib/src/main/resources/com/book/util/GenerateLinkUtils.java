@@ -1,12 +1,9 @@
 package com.book.util;
 
 import com.book.model.User;
-import net.paoding.rose.web.Invocation;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import javax.servlet.ServletRequest;
 
 /**
  * 生成帐户激活、重新设置密码的链接

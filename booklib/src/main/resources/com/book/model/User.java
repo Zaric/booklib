@@ -1,6 +1,5 @@
 package com.book.model;
 
-import com.book.util.CryptUtils;
 import com.book.util.Utils;
 
 /**

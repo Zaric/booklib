@@ -1,13 +1,12 @@
 package com.book.taglib;
 
-import java.io.IOException;
+import com.book.model.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
-
-import com.book.model.Page;
+import java.io.IOException;
 
 /**
  * 页码标签程序，特点： 1：5页后当前页码总在中间 2：页码上的URL地址支持多种方式，如：

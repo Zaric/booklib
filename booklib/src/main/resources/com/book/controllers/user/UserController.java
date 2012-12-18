@@ -1,28 +1,25 @@
 package com.book.controllers.user;
 
-import java.util.List;
-
-import javax.servlet.http.Cookie;
-
 import com.book.biz.idchecker.check.Checker;
-import com.book.util.CryptUtils;
-import com.book.util.EmailUtils;
-import net.paoding.rose.web.Invocation;
-import net.paoding.rose.web.annotation.Param;
-import net.paoding.rose.web.annotation.Path;
-import net.paoding.rose.web.annotation.rest.Get;
-import net.paoding.rose.web.annotation.rest.Post;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.book.controllers.AdminRequired;
 import com.book.controllers.LoginRequired;
 import com.book.dao.UserDAO;
 import com.book.model.Page;
 import com.book.model.User;
+import com.book.util.CryptUtils;
+import com.book.util.EmailUtils;
 import com.book.util.Utils;
 import com.book.util.WebUtil;
+import net.paoding.rose.web.Invocation;
+import net.paoding.rose.web.annotation.Param;
+import net.paoding.rose.web.annotation.Path;
+import net.paoding.rose.web.annotation.rest.Get;
+import net.paoding.rose.web.annotation.rest.Post;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.servlet.http.Cookie;
+import java.util.List;
 
 @LoginRequired
 @Path("")

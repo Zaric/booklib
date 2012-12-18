@@ -1,10 +1,9 @@
 package com.book.controllers;
 
+import com.book.util.Utils;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
-
-import com.book.util.Utils;
 
 /**
  * @author zhangzuoqiang

@@ -1,12 +1,11 @@
 package com.book.dao;
 
-import java.util.List;
-
+import com.book.model.Remark;
 import net.paoding.rose.jade.annotation.DAO;
 import net.paoding.rose.jade.annotation.ReturnGeneratedKeys;
 import net.paoding.rose.jade.annotation.SQL;
 
-import com.book.model.Remark;
+import java.util.List;
 
 @DAO
 public interface RemarkDAO {

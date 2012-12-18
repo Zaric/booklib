@@ -2,11 +2,6 @@ package com.book.util;
 
 import com.book.model.User;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Date;
-import java.util.Properties;
-
 import javax.mail.Authenticator;
 import javax.mail.Message.RecipientType;
 import javax.mail.PasswordAuthentication;
@@ -14,6 +9,10 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Date;
+import java.util.Properties;
 
 public class EmailUtils {
 

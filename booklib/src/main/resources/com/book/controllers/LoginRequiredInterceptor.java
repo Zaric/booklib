@@ -1,12 +1,11 @@
 package com.book.controllers;
 
-import java.lang.annotation.Annotation;
-
+import com.book.model.User;
+import com.book.util.Utils;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 
-import com.book.model.User;
-import com.book.util.Utils;
+import java.lang.annotation.Annotation;
 
 /**
  * @Author zhangzuoqiang

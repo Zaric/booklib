@@ -1,19 +1,16 @@
 package com.book.controllers;
 
-import java.lang.annotation.Annotation;
-
-import javax.servlet.http.Cookie;
-
 import com.book.biz.user.UserBiz;
+import com.book.dao.UserDAO;
+import com.book.model.User;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Interceptor;
-
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.book.dao.UserDAO;
-import com.book.model.User;
+import javax.servlet.http.Cookie;
+import java.lang.annotation.Annotation;
 
 /**
  * @Todo 自动登录的实现

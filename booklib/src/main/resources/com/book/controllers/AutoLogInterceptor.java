@@ -3,19 +3,16 @@
  */
 package com.book.controllers;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.servlet.http.HttpServletRequest;
-
-import net.paoding.rose.web.ControllerInterceptorAdapter;
-import net.paoding.rose.web.Invocation;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.book.dao.LogDAO;
 import com.book.model.Log;
 import com.book.model.User;
+import net.paoding.rose.web.ControllerInterceptorAdapter;
+import net.paoding.rose.web.Invocation;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author zhangzuoqiang

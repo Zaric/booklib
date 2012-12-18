@@ -1,13 +1,5 @@
 package com.book.controllers.book;
 
-import net.paoding.rose.web.Invocation;
-import net.paoding.rose.web.annotation.Param;
-import net.paoding.rose.web.annotation.Path;
-import net.paoding.rose.web.annotation.rest.Post;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.book.controllers.AdminRequired;
 import com.book.controllers.LoginRequired;
 import com.book.dao.RemarkDAO;
@@ -16,6 +8,12 @@ import com.book.model.Remark;
 import com.book.model.User;
 import com.book.util.Utils;
 import com.book.util.WebUtil;
+import net.paoding.rose.web.Invocation;
+import net.paoding.rose.web.annotation.Param;
+import net.paoding.rose.web.annotation.Path;
+import net.paoding.rose.web.annotation.rest.Post;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author zhangzuoqiang

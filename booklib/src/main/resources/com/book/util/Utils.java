@@ -1,5 +1,7 @@
 package com.book.util;
 
+import net.paoding.rose.web.Invocation;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.lang.reflect.Field;
@@ -7,8 +9,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
-
-import net.paoding.rose.web.Invocation;
 
 /**
  * @author zhangzuoqiang
