@@ -21,7 +21,7 @@ public interface BookDAO {
      * @Todo 根据BookID从数据库查询出Book
      * @Modify
      */
-    @SQL("select uuid, name, price, author, content, create_time from book where uuid = :1")
+    @SQL("select uuid, name, price, author, content, summary, create_time from book where uuid = :1")
     public Book get(String bookUid);
 
     /**
@@ -37,7 +37,7 @@ public interface BookDAO {
      * @Todo 从数据库中查询出书名一样的书，一般来说书名可能重复，但是书名和作者不能同时重复
      * @Modify
      */
-    @SQL("select uuid, name, price, author, content, create_time from book where name = :1")
+    @SQL("select uuid, name, price, author, content, summary, create_time from book where name = :1")
     public List<Book> getBooksByName(String name);
 
     /**
@@ -46,17 +46,17 @@ public interface BookDAO {
      * @Todo 查询前几行的数据
      * @Modify
      */
-    @SQL("select uuid, name, price, author, content, create_time from book order by id desc limit :1")
+    @SQL("select uuid, name, price, author, content, summary, create_time from book order by id desc limit :1")
     public List<Book> find(int limit);
 
-    @SQL("select uuid, name, price, author, content, create_time from book order by id desc limit :1, :2")
+    @SQL("select uuid, name, price, author, content, summary, create_time from book order by id desc limit :1, :2")
     public List<Book> find(int preLimit, int limit);
 
-    @SQL("update book set name=:1.name, content=:1.content, price=:1.price, author=:1.author where uuid=:1.uuid")
+    @SQL("update book set name=:1.name, content=:1.content, summary=:1.summary, price=:1.price, author=:1.author where uuid=:1.uuid")
     public void update(Book book);
 
     @ReturnGeneratedKeys
-    @SQL("insert into book (uuid, name, price, author, content) values (replace(uuid(), '-', ''), :1.name, :1.price, :1.author, :1.content)")
+    @SQL("insert into book (uuid, name, price, author, content, summary) values (replace(uuid(), '-', ''), :1.name, :1.price, :1.author, :1.content, :1.summary)")
     public int save(Book book);
 
     @SQL("delete from book where uuid = :1")

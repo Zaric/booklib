@@ -22,8 +22,9 @@
         书的价格：<input type="text" value="" name="price"/><br>
         书的作者：<input type="text" value="" name="author"/><br>
         书的简介：
-        <textarea id="editor_id" name="content" style="width:800px;height:400px;">
+        <textarea id="content" name="content" style="width:800px;height:400px;">
         </textarea>
+        <input type="hidden" id="summary" name="summary"/>
         <br>
 
         <input type="submit" value="增加"/><br>
@@ -31,8 +32,9 @@
     </form>
 </div>
 
-<script charset="GBK" src="<%=contextPath %>/resources/kindeditor/kindeditor.js"></script>
-<script charset="GBK" src="<%=contextPath %>/resources/kindeditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="<%=contextPath %>/resources/jquery-1.6.4.min.js"></script>
+<script charset="utf-8" src="<%=contextPath %>/resources/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="<%=contextPath %>/resources/kindeditor/lang/zh_CN.js"></script>
 
 <script>
     var editor;
@@ -40,30 +42,25 @@
         editor = K.create(
                 'textarea[name="content"]',
                 {
+                    resizeType: 0,  // 2时可以拖动改变宽度和高度，1时只能改变高度，0时不能拖动
+                    readonlyMode: false, //只读模式 默认为false
                     allowPreviewEmoticons: false,
                     autoHeightMode: true,
                     uploadJson: '../resources/kindeditor/jsp/upload_json.jsp',
                     fileManagerJson: '../resources/kindeditor/jsp/file_manager_json.jsp',
                     allowFileManager: true,
+
                     afterCreate: function () {
                         this.loadPlugin('autoheight');
                         this.loadPlugin('insertfile');
+                    },
+
+                    afterChange: function () {
+                        var str = this.text().replace(/<[^>].*?>/g, "");
+                        document.getElementById('summary').value = str.substring(0, 300);
                     }
                 });
     });
-
-    // 取得HTML内容
-    html = editor.html();
-
-    // 同步数据后可以直接取得textarea的value
-    editor.sync();
-    html = document.getElementById('editor_id').value; // 原生API
-    html = K('#editor_id').val(); // KindEditor Node API
-    html = $('#editor_id').val(); // jQuery
-
-    // 设置HTML内容
-    editor.html('HTML内容');
-
 </script>
 
 </body>

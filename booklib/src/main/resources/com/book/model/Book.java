@@ -12,6 +12,7 @@ public class Book {
     private String price;
     private String author;
     private String content;
+    private String summary;
     private String createTime;
 
     public String getUuid() {
@@ -44,6 +45,18 @@ public class Book {
 
     public void setAuthor(final String author) {
         this.author = author;
+    }
+
+    public String getSummary() {
+        return this.summary;
+    }
+
+    public void setSummary(final String summary) {
+        if (null == summary) {
+            this.summary = "";
+            return;
+        }
+        this.summary = summary;
     }
 
     public String getContent() {

@@ -24,7 +24,7 @@
             <th>书名</th>
             <th>价格</th>
             <th>作者</th>
-            <th>简介</th>
+            <th>摘要</th>
             <th>添加时间</th>
             <th>操作</th>
         </tr>
@@ -34,7 +34,7 @@
                 <td><a href="/booklib/book/${item.uuid }">${item.name }</a></td>
                 <td>${item.price }</td>
                 <td>${item.author }</td>
-                <td>${item.content }</td>
+                <td>${item.summary }</td>
                 <td>${item.createTime }</td>
                 <td>
                     <form action="/booklib/book/${item.uuid}/delete" method="post">
