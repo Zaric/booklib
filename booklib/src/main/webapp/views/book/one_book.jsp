@@ -20,7 +20,7 @@
     书的名称：${book.name }<br>
     书的价格：${book.price }<br>
     书的作者：${book.author }<br>
-    书的摘要：${book.summary}<br>
+    书的摘要：${book.content }<br>
     书的创建时间：${book.createTime }<br>
 </div>
 <h2>书籍的评论</h2>
