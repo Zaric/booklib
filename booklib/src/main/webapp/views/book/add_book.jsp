@@ -56,7 +56,7 @@
                     },
 
                     afterChange: function () {
-                        var str = this.text().replace(/<[^>].*?>/g, "");
+                        var str = this.text().replace(/<[^>].*?>/g, "").trim();
                         document.getElementById('summary').value = str.substring(0, 300);
                     }
                 });
