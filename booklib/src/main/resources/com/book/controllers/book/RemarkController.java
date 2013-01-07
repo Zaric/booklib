@@ -38,9 +38,6 @@ public class RemarkController {
      */
     @Post("add")
     public String add(final Invocation inv, final Remark remark) {
-
-        System.out.println(remark.getUuid());
-
         if (StringUtils.isEmpty(remark.getEssay())) {
             inv.addModel("book",
                     inv.getRequest().getSession().getAttribute("book"));
