@@ -52,7 +52,7 @@ public class CaptchaController {
         }
 
         // randomCode用于保存随机产生的验证码，以便用户登录后进行验证
-        StringBuffer randomCode = new StringBuffer();
+        StringBuilder randomCode = new StringBuilder();
 
         // 设置默认生成4个验证码
         int length = 4;
